@@ -2,28 +2,36 @@
 
 @section('content')
     <br><br><br>
+    <h1>contact</h1>
 
+    <form role="form" id="contact-form" class="contact-form" method="POST" action="{{route('contact.store')}}">
 
-
-
-    <h1>Contact</h1>
-    <p class="lead">PLease us this to contact the site owner.</p>
-
-    <form action="/contact" method="post">
         {{ csrf_field() }}
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input name="email" class="form-control" id="email" placeholder="name@example.com">
-        </div>
 
-        <div class="form-group">
-            <label for="body">Message</label>
-            <textarea name="body"class="form-control" id="body" rows="3"></textarea>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" autocomplete="off" id="Name" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea class="form-control textarea" rows="3" name="message" id="Message" placeholder="Message"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn main-btn pull-right">Send a message</button>
+            </div>
+        </div>
     </form>
-
-
-
 
 @endsection
